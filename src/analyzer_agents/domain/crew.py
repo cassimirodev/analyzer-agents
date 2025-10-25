@@ -20,7 +20,7 @@ class FinancialCrew():
         return Agent(
             config=self.agents_config['julia'], # type: ignore[index]
             tools=[get_financial_data], 
-            max_rpm=2,
+            max_rpm=15,
             verbose=True
         )
 
@@ -29,15 +29,15 @@ class FinancialCrew():
         return Agent(
             config=self.agents_config['pedro'], # type: ignore[index]
             tools=[SerperDevTool()], 
-            max_rpm=2,
+            max_rpm=15,
             verbose=True
         )
 
     @agent
     def key(self) -> Agent:
         return Agent(
-            config=self.agents_config['key'], # type: ignore
-            max_rpm=2, # type: ignore[index]
+            config=self.agents_config['key'], # type: ignore[index]
+            max_rpm=15, 
             verbose=True
         )
     
