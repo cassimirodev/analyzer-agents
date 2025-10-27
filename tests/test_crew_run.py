@@ -1,4 +1,4 @@
-from src.analyzer_agents.domain.crew import FinancialCrew
+from src.analyzer_agents.crew.crew import FinancialCrew
 import pytest
 from datetime import datetime
 from dotenv import load_dotenv
