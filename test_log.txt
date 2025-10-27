@@ -1,0 +1,360 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-8.4.2, pluggy-1.6.0
+rootdir: /home/luiseduardo/ai-agents/analyzer_agents
+configfile: pyproject.toml
+plugins: anyio-4.11.0
+collected 1 item
+
+tests/test_crew_run.py 
+--- INICIANDO TESTE PARA O TÓPICO: Alphabet Inc. (GOOG) ---
+╭──────────────────────────────────────────────────────────────────── 🤖 Agent Started ────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  Agent: Coletora de Dados Financeiros sobre Alphabet Inc. (GOOG)                                                                                         │
+│                                                                                                                                                          │
+│  Task: Colete os dados financeiros chaves (preço atual, variação, P/L, etc.) sobre Alphabet Inc. (GOOG) e resuma em tópicos.                             │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────────────────── 🔧 Agent Tool Execution ─────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  Agent: Coletora de Dados Financeiros sobre Alphabet Inc. (GOOG)                                                                                         │
+│                                                                                                                                                          │
+│  Thought: Thought: Para atender à solicitação, preciso coletar os dados financeiros chave da Alphabet Inc. (GOOG) usando a ferramenta disponível. A      │
+│  ferramenta "Yahoo Finance Tool" é a única opção e é adequada para essa tarefa. O ticker para Alphabet Inc. é "GOOG". Portanto, a próxima ação é usar a  │
+│  ferramenta com o ticker "GOOG".                                                                                                                         │
+│                                                                                                                                                          │
+│  Using Tool: Yahoo Finance Tool                                                                                                                          │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────────────────────────────────────────────── Tool Input ───────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  {                                                                                                                                                       │
+│    "ticker": "GOOG"                                                                                                                                      │
+│  }                                                                                                                                                       │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭────────────────────────────────────────────────────────────────────── Tool Output ───────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  {'companyName': 'Alphabet Inc.', 'currentPrice': 260.51, 'peRatio': 27.772923, 'marketCap': 3146676174848, 'summary': 'Alphabet Inc. offers various     │
+│  products and platforms in the United States, Europe, the Middle East, Africa, the Asia-Pacific, Canada, and Latin America. It operates through Google   │
+│  Services, Google Cloud, and Other Bets segments. The Google Services segment provides products and services, including ads, Android, Chrome, devices,   │
+│  Gmail, Google Drive, Google Maps, Google Photos, Google Play, Search, and YouTube. It is also involved in the sale of apps and in-app purchases and     │
+│  digital content in the Google Play and YouTube; and devices, as well as in the provision of YouTube consumer subscription services. The Google Cloud    │
+│  segment offers AI infrastructure, Vertex AI platform, cybersecurity, data and analytics, and other services; Google Workspace that include cloud-based  │
+│  communication and collaboration tools for enterprises, such as Calendar, Gmail, Docs, Drive, and Meet; and other services for enterprise customers.     │
+│  The Other Bets segment sells healthcare-related and internet services. The company was incorporated in 1998 and is headquartered in Mountain View,      │
+│  California.'}                                                                                                                                           │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────────────────────── ✅ Agent Final Answer ──────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  Agent: Coletora de Dados Financeiros sobre Alphabet Inc. (GOOG)                                                                                         │
+│                                                                                                                                                          │
+│  Final Answer:                                                                                                                                           │
+│  **Dados Financeiros Chave sobre Alphabet Inc. (GOOG)**                                                                                                  │
+│                                                                                                                                                          │
+│  Aqui está um resumo dos principais indicadores financeiros da Alphabet Inc. (GOOG), com base nos dados mais recentes do Yahoo Finance:                  │
+│                                                                                                                                                          │
+│  *   **Empresa:** Alphabet Inc.                                                                                                                          │
+│  *   **Ticker:** GOOG                                                                                                                                    │
+│  *   **Preço Atual:** $260.51                                                                                                                            │
+│  *   **Relação Preço/Lucro (P/L Ratio):** 27.77                                                                                                          │
+│  *   **Capitalização de Mercado (Market Cap):** $3.15 Triliões                                                                                           │
+│  *   **Resumo da Empresa:** Alphabet Inc. é uma holding multinacional que atua principalmente através de seus segmentos Google Services (incluindo       │
+│  Busca, Android, Chrome e YouTube), Google Cloud (serviços de computação em nuvem e ferramentas de colaboração) e Other Bets (investimentos em           │
+│  tecnologias emergentes, como saúde e internet). A empresa foi fundada em 1998 e tem sua sede em Mountain View, Califórnia.                              │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────────────────────── 🤖 Agent Started ────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  Agent: Analista de sentimento de mercado sobre Alphabet Inc. (GOOG)                                                                                     │
+│                                                                                                                                                          │
+│  Task: Usando o resultado da coleta de dados de Júlia, pesquise o sentimento da mídia sobre Alphabet Inc. (GOOG) e identifique as cinco notícias mais    │
+│  influentes.                                                                                                                                             │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────────────────── 🔧 Agent Tool Execution ─────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  Agent: Analista de sentimento de mercado sobre Alphabet Inc. (GOOG)                                                                                     │
+│                                                                                                                                                          │
+│  Thought: Thought:                                                                                                                                       │
+│  Meu objetivo é analisar o sentimento da mídia sobre a Alphabet Inc. (GOOG) e identificar as cinco notícias mais influentes. Tenho os dados financeiros  │
+│  básicos fornecidos por Júlia. Preciso usar a ferramenta de busca no máximo duas vezes.                                                                  │
+│  **Plano:**                                                                                                                                              │
+│  1.  **Primeira Busca:** Farei uma busca geral por notícias e análises recentes sobre a Alphabet para ter uma visão ampla do sentimento atual do         │
+│  mercado. Usarei termos como "Alphabet Inc. news sentiment", "GOOG stock analysis", e "Google recent events".                                            │
+│  2.  **Análise e Segunda Busca:** Com base nos resultados da primeira busca, identificarei os temas dominantes (ex: IA, regulação, resultados            │
+│  financeiros, concorrência). Se necessário, farei uma segunda busca mais específica sobre o tema mais impactante para aprofundar a análise.              │
+│  3.  **Síntese Final:** Consolidarei todas as informações para redigir a resposta final em duas partes: um resumo do sentimento do mercado e um resumo   │
+│  das cinco notícias mais influentes.                                                                                                                     │
+│  Vou começar com a primeira busca para coletar informações gerais.                                                                                       │
+│                                                                                                                                                          │
+│  Using Tool: Search the internet with Serper                                                                                                             │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────────────────────────────────────────────── Tool Input ───────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  {                                                                                                                                                       │
+│    "search_query": "Alphabet Inc. (GOOG) market sentiment and recent influential news"                                                                   │
+│  }                                                                                                                                                       │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭────────────────────────────────────────────────────────────────────── Tool Output ───────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  {'searchParameters': {'q': 'Alphabet Inc. (GOOG) market sentiment and recent influential news', 'type': 'search', 'num': 10, 'engine': 'google'},       │
+│  'organic': [{'title': 'Alphabet Inc. (GOOG) Stock Price, News, Quote & History', 'link': 'https://finance.yahoo.com/quote/GOOG/', 'snippet': 'Find the  │
+│  latest Alphabet Inc. (GOOG) stock quote, history, news and other vital information to help you with your stock trading and investing.', 'position':     │
+│  1}, {'title': 'GOOGL: Alphabet Class A - Stock Price, Quote and News - CNBC', 'link': 'https://www.cnbc.com/quotes/GOOGL', 'snippet': 'Latest On        │
+│  Alphabet Class A · Wall Street gets back on Apple train, pushing stock to cusp of $4 trillion market cap · A rotation out of the US is a bet against    │
+│  the ...', 'position': 2}, {'title': 'Alphabet Inc. (GOOG) Latest Stock News & Headlines', 'link': 'https://finance.yahoo.com/quote/GOOG/news/',         │
+│  'snippet': 'Get the latest Alphabet Inc. (GOOG) stock news and headlines to help you in your trading and investing decisions.', 'position': 3},         │
+│  {'title': 'Alphabet Inc. (GOOG) Stock Moves -2.21%: What You Should Know', 'link':                                                                      │
+│  'https://www.nasdaq.com/articles/alphabet-inc-goog-stock-moves-221-what-you-should-know', 'snippet': "Alphabet Inc. (GOOG) ended the recent trading     │
+│  session at $251.34, demonstrating a -2.21% change from the preceding day's closing price.", 'position': 4}, {'title': 'GOOG Stock Quote Price and       │
+│  Forecast - CNN', 'link': 'https://www.cnn.com/markets/stocks/GOOG', 'snippet': 'The price of GOOG shares has increased $6.78 since the market last      │
+│  closed. This is a 2.67% rise. Opened at $257.31. The stock opened $3.59 higher than its ...', 'position': 5}, {'title': 'Robert Bender&Associates       │
+│  Reduces Stake in Alphabet Inc.', 'link':                                                                                                                │
+│  'https://www.theglobeandmail.com/investing/markets/stocks/GOOG/pressreleases/35672369/robert-benderassociates-reduces-stake-in-alphabet-inc/',          │
+│  'snippet': 'Robert Bender&Associates, managed by Robert L. Bender, recently executed a significant transaction invol...                                 │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────────────────── 🔧 Agent Tool Execution ─────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  Agent: Analista de sentimento de mercado sobre Alphabet Inc. (GOOG)                                                                                     │
+│                                                                                                                                                          │
+│  Thought: Thought:                                                                                                                                       │
+│  A primeira busca me deu uma visão geral, mas não foi específica o suficiente para identificar as CINCO notícias mais influentes. Os resultados são      │
+│  links para páginas de cotação de ações (Yahoo Finance, CNBC, CNN), que listam manchetes, mas não detalham o *porquê* de serem influentes. A seção       │
+│  "People Also Ask" e os resultados como o da Bloomberg são mais úteis, apontando para a preocupação com a concorrência em IA e seu impacto no negócio    │
+│  de busca do Google, especialmente em relação à Apple.                                                                                                   │
+│  Para cumprir a tarefa, preciso focar em encontrar os artigos de notícias que estão moldando a narrativa atual. Vou refinar minha busca para encontrar   │
+│  análises e notícias específicas que discutam os principais impulsionadores do sentimento do mercado para a Alphabet. Temas que parecem importantes      │
+│  são:                                                                                                                                                    │
+│  1.  **Concorrência em IA:** A ameaça da IA generativa ao modelo de negócios de busca.                                                                   │
+│  2.  **Parceria com a Apple:** A potencial mudança no status do Google como mecanismo de busca padrão nos dispositivos Apple.                            │
+│  3.  **Resultados Financeiros e Desempenho:** Como a empresa está performando financeiramente em meio a esses desafios.                                  │
+│  4.  **Inovações Próprias em IA:** O que o Google está fazendo para competir (ex: Gemini, I/O conference).                                               │
+│  5.  **Questões Regulatórias:** Qualquer notícia sobre investigações antitruste.                                                                         │
+│  Farei uma segunda e última busca mais direcionada para capturar essas narrativas.                                                                       │
+│                                                                                                                                                          │
+│  Using Tool: Search the internet with Serper                                                                                                             │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────────────────────────────────────────────── Tool Input ───────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  {                                                                                                                                                       │
+│    "search_query": "influential news impacting Alphabet (GOOG) stock: AI competition, Apple search deal, Google I/O, antitrust"                          │
+│  }                                                                                                                                                       │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭────────────────────────────────────────────────────────────────────── Tool Output ───────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  {'searchParameters': {'q': 'influential news impacting Alphabet (GOOG) stock: AI competition, Apple search deal, Google I/O, antitrust', 'type':        │
+│  'search', 'num': 10, 'engine': 'google'}, 'organic': [{'title': 'Alphabet shares pop after Google avoids breakup in antitrust case', 'link':            │
+│  'https://www.cnbc.com/2025/09/03/alphabet-pops-after-google-avoids-breakup-in-antitrust-case.html', 'snippet': "Alphabet shares rose 9.14% on           │
+│  Wednesday as investors viewed the result of Google's antitrust case as broadly favorable to the tech giant.", 'position': 1}, {'title': "Alphabet       │
+│  Stock Hits All-Time High as Antitrust Fears Fade - Barron's", 'link':                                                                                   │
+│  'https://www.barrons.com/articles/google-alphabet-stock-price-ruling-alphabet-stock-apple-e82117fa?gaa_at=eafs&gaa_n=AWEtsqffUOFNT4D2GNh9ZiV-5UMJy5V-Y  │
+│  VyWCCcFU9mj4i3IoPIGO7zRq8QJ&gaa_ts=68fd496c&gaa_sig=6jKO089Wiz7HaoLVgSkmHEz8261w-gSdDmN3XwykCsm-g5KgjQPHgM1YUcW8faaRAYcNWEsDtMT9YHvDDHAKow%3D%3D',      │
+│  'snippet': "Shares of Google-parent Alphabet soared to new highs after the federal district court judge in the U.S. government's case against Google    │
+│  ...", 'position': 2}, {'title': 'Google keeps Chrome and Apple deal but must share data in big ...', 'link':                                            │
+│  'https://www.reuters.com/sustainability/boards-policy-regulation/google-keeps-chrome-apple-deal-must-share-data-big-antitrust-ruling-2025-09-02/',      │
+│  'snippet': 'Google keeps Chrome and Apple deal but must share data in big antitrust ruling · Google avoids forced Chrome sale · Alphabet shares up 7%   │
+│  · Justice ...', 'position': 3}, {'title': 'Google Stock Climbs On Judge Mehta Ruling In Search Antitrust ...', 'link':                                  │
+│  'https://www.investors.com/news/technology/google-stock-apple-stock-judge-mehta-search-antitrust-ruling/', 'snippet': 'Google stock rose after a        │
+│  federal judge issued a favorable ruling on antitrust remedies involving its search business. Apple stock also ...', 'position': 4}, {'title': 'Google   │
+│  not required to sell Chrome in antitrust remedy ruling', 'link': 'https://seekingalpha....                                                              │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────────────────────── ✅ Agent Final Answer ──────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  Agent: Analista de sentimento de mercado sobre Alphabet Inc. (GOOG)                                                                                     │
+│                                                                                                                                                          │
+│  Final Answer:                                                                                                                                           │
+│  ### **Análise de Sentimento de Mercado sobre Alphabet Inc. (GOOG)**                                                                                     │
+│                                                                                                                                                          │
+│  **1. Sentimento do Mercado**                                                                                                                            │
+│                                                                                                                                                          │
+│  O sentimento atual do mercado em relação à Alphabet Inc. (GOOG) é predominantemente **otimista e de alívio**. A principal força motriz por trás desse   │
+│  sentimento positivo é o resultado favorável no caso antitruste movido pelo Departamento de Justiça dos EUA. Por meses, uma nuvem de incerteza pairava   │
+│  sobre a empresa, com a possibilidade de uma ordem judicial para desmembrar partes cruciais de seu negócio, como o navegador Chrome, ou anular o         │
+│  lucrativo acordo que torna o Google o mecanismo de busca padrão nos dispositivos da Apple.                                                              │
+│                                                                                                                                                          │
+│  A decisão do juiz de não impor essas medidas drásticas foi interpretada pelo mercado como uma vitória massiva. A reação foi imediata e forte, com as    │
+│  ações da Alphabet atingindo novos máximos históricos. Os investidores agora veem um caminho mais claro para a frente, onde a empresa pode se            │
+│  concentrar em seus principais desafios e oportunidades, principalmente a competição no campo da Inteligência Artificial, sem a ameaça existencial de    │
+│  uma reestruturação forçada.                                                                                                                             │
+│                                                                                                                                                          │
+│  Embora as preocupações com a concorrência de IA da Microsoft/OpenAI e a evolução da busca generativa permaneçam, a remoção do risco regulatório         │
+│  imediato superou essas preocupações no curto prazo, restaurando a confiança na estabilidade e no poder de mercado do modelo de negócios principal da    │
+│  Alphabet.                                                                                                                                               │
+│                                                                                                                                                          │
+│  **2. Resumo das 5 Notícias-Chave Mais Influentes**                                                                                                      │
+│                                                                                                                                                          │
+│  As notícias mais influentes que moldam a narrativa atual da Alphabet estão quase inteiramente focadas nas várias facetas da sua recente vitória no      │
+│  tribunal antitruste.                                                                                                                                    │
+│                                                                                                                                                          │
+│  1.  **Decisão Judicial Evita a Quebra da Empresa:** A notícia mais impactante é a decisão de um juiz federal que rejeitou o pedido do Departamento de   │
+│  Justiça para forçar o Google a vender seu navegador Chrome. Essa decisão foi vista como o melhor cenário possível para a Alphabet, pois preserva a      │
+│  sinergia entre seus produtos principais (Busca, Chrome, Android) que formam a base de seu domínio de mercado e modelo de publicidade. A narrativa da    │
+│  mídia enfatiza que a empresa "se esquivou de uma bala", evitando uma perturbação massiva em suas operações.                                             │
+│                                                                                                                                                          │
+│  2.  **Manutenção do Acordo Crucial com a Apple:** Parte da decisão judicial foi a permissão para que o Google continue seu acordo multibilionário com   │
+│  a Apple, que mantém o Google Search como o mecanismo de busca padrão no Safari em iPhones e outros dispositivos Apple. A perda deste acordo teria sido  │
+│  um golpe financeiro e estratégico significativo, abrindo a porta para concorrentes como a Microsoft (Bing). A preservação deste pacto solidifica uma    │
+│  fonte de receita vital e um ponto de distribuição de tráfego insubstituível.                                                                            │
+│                                                                                                                                                          │
+│  3.  **Reação Exuberante do Mercado e Máximas Históricas das Ações:** Imediatamente após a divulgação da notícia, as ações da Alphabet (GOOG)            │
+│  registraram uma alta expressiva, superando o mercado e atingindo novos recordes de preço. Esta reação não foi apenas um reflexo do alívio, mas também   │
+│  uma reavaliação do valor da empresa agora que um dos maiores riscos percebidos foi removido. A cobertura financeira destacou o aumento de bilhões de    │
+│  dólares na capitalização de mercado da empresa em questão de horas.                                                                                     │
+│                                                                                                                                                          │
+│  4.  **Foco Renovado na Competição de IA:** Com a batalha legal em segundo plano, a narrativa agora se volta para como a Alphabet utilizará sua          │
+│  estrutura intacta para competir na corrida da Inteligência Artificial. Analistas sugerem que, com o negócio de busca seguro, a empresa pode agora       │
+│  integrar de forma mais agressiva suas tecnologias de IA, como o modelo Gemini, em seus produtos para combater a ameaça representada pelo ChatGPT e      │
+│  outras IAs generativas que poderiam mudar a forma como os usuários encontram informações online.                                                        │
+│                                                                                                                                                          │
+│  5.  **Consenso Positivo dos Analistas e Revisão de Preços-Alvo:** A vitória no tribunal levou a uma onda de relatórios positivos de analistas de Wall   │
+│  Street. O consenso geral é que a decisão remove um "overhang" (fator de incerteza) significativo das ações. Muitos analistas reiteraram suas            │
+│  classificações de "compra" e alguns aumentaram seus preços-alvo, citando maior clareza sobre o futuro da empresa e a resiliência de seu ecossistema de  │
+│  negócios. Esta validação por parte da comunidade de investimentos reforçou ainda mais o sentimento otimista entre os investidores.                      │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────────────────────── 🤖 Agent Started ────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  Agent: Jornalista Financeiro Experiente e Curador de Conteúdo                                                                                           │
+│                                                                                                                                                          │
+│  Task: Usando o resumo de dados de Júlia e a análise de mercado de Pedro, escreva uma matéria financeira completa e confiável sobre Alphabet Inc.        │
+│  (GOOG).                                                                                                                                                 │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────────────────────────────────────── ✅ Agent Final Answer ──────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                          │
+│  Agent: Jornalista Financeiro Experiente e Curador de Conteúdo                                                                                           │
+│                                                                                                                                                          │
+│  Final Answer:                                                                                                                                           │
+│  ### **Alívio em Mountain View: Vitória Judicial Impulsiona Alphabet e Reacende Foco na Batalha da IA**                                                  │
+│                                                                                                                                                          │
+│  **Decisão em caso antitruste preserva ecossistema da empresa e acordo bilionário com a Apple, removendo uma densa nuvem de incerteza e levando          │
+│  investidores a reavaliarem o gigante da tecnologia, cujas ações atingiram novas máximas históricas.**                                                   │
+│                                                                                                                                                          │
+│  **Por Jornalista Financeiro Experiente**                                                                                                                │
+│                                                                                                                                                          │
+│  Uma onda de alívio e otimismo varreu Wall Street, impulsionando as ações da Alphabet Inc. (GOOG) para territórios inexplorados. A causa da euforia foi  │
+│  a decisão favorável em um dos casos antitruste mais observados da década, movido pelo Departamento de Justiça dos EUA. Por meses, uma ameaça            │
+│  existencial pairou sobre a holding do Google: a possibilidade de uma reestruturação forçada que poderia desmembrar seu poderoso ecossistema. Com a      │
+│  decisão judicial afastando os cenários mais drásticos, o mercado não apenas respirou aliviado, mas reavaliou o valor de um gigante agora livre para     │
+│  focar em seu próximo grande desafio: a supremacia na era da Inteligência Artificial.                                                                    │
+│                                                                                                                                                          │
+│  A reação foi imediata e retumbante. As ações da companhia, negociadas a **$260.51**, dispararam, refletindo a confiança renovada dos investidores.      │
+│  Esse movimento adicionou bilhões ao valor de mercado da empresa, consolidando sua posição como um dos titãs globais com uma capitalização de mercado    │
+│  que agora ultrapassa os **$3.15 trilhões**.                                                                                                             │
+│                                                                                                                                                          │
+│  #### **O Fim de uma Ameaça Existencial**                                                                                                                │
+│                                                                                                                                                          │
+│  No cerne da questão estava o pedido do Departamento de Justiça para que a Alphabet fosse forçada a vender ativos cruciais, como seu navegador Chrome.   │
+│  Tal medida teria abalado fundamentalmente a sinergia que sustenta o domínio da empresa. O modelo de negócios da Alphabet, uma multinacional com sede    │
+│  em Mountain View, Califórnia, depende da integração perfeita entre seus segmentos: Google Services (Busca, Android, Chrome, YouTube) e Google Cloud. O  │
+│  Chrome não é apenas um navegador; é o principal canal de distribuição para o motor de busca do Google, que, por sua vez, alimenta a multibilionária     │
+│  máquina de publicidade da empresa.                                                                                                                      │
+│                                                                                                                                                          │
+│  A decisão de um juiz federal de rejeitar essa medida foi, nas palavras de muitos analistas, o "melhor cenário possível". Ao permitir que a Alphabet     │
+│  mantenha sua estrutura intacta, a justiça validou, por ora, a coesão de seu ecossistema. A empresa, como descreve a mídia especializada, "se esquivou   │
+│  de uma bala", evitando uma perturbação massiva em suas operações e estratégia de longo prazo.                                                           │
+│                                                                                                                                                          │
+│  #### **A Joia da Coroa Está Segura: O Acordo com a Apple**                                                                                              │
+│                                                                                                                                                          │
+│  Igualmente crucial foi a preservação do acordo multibilionário que a Alphabet mantém com a Apple. Este pacto garante que o Google Search seja o         │
+│  mecanismo de busca padrão no navegador Safari, utilizado em milhões de iPhones, iPads e Macs em todo o mundo. A perda deste contrato não seria apenas   │
+│  um golpe financeiro direto, mas abriria uma porta estratégica para concorrentes como o Bing, da Microsoft.                                              │
+│                                                                                                                                                          │
+│  Ao manter o acordo, a Alphabet solidifica uma de suas mais vitais fontes de tráfego e receita, garantindo que seu motor de busca permaneça como o       │
+│  ponto de partida para a grande maioria dos usuários no ecossistema de maior valor do mundo.                                                             │
+│                                                                                                                                                          │
+│  #### **Com o Passado Resolvido, o Futuro é a IA**                                                                                                       │
+│                                                                                                                                                          │
+│  Com a remoção do que Wall Street chamava de "overhang" regulatório — um fator de incerteza que deprimia o potencial das ações —, a narrativa sobre a    │
+│  Alphabet muda de tom. A questão não é mais sobre defesa legal, mas sobre inovação e ataque comercial. O foco se volta inteiramente para a corrida da    │
+│  Inteligência Artificial.                                                                                                                                │
+│                                                                                                                                                          │
+│  A ameaça representada pela parceria Microsoft/OpenAI e a ascensão da busca generativa através de ferramentas como o ChatGPT é real e iminente. Essas    │
+│  tecnologias prometem transformar a maneira como os usuários encontram informações, desafiando o modelo clássico de links azuis que fez do Google um     │
+│  verbo.                                                                                                                                                  │
+│                                                                                                                                                          │
+│  Agora, com seu negócio principal seguro e sua estrutura coesa, a Alphabet está em uma posição privilegiada para integrar de forma mais agressiva suas   │
+│  próprias tecnologias de IA, como o poderoso modelo Gemini, em todo o seu portfólio de produtos. A batalha pelo futuro da busca e da interação digital   │
+│  está oficialmente em primeiro plano, e a Alphabet entra nela sem as amarras da incerteza jurídica.                                                      │
+│                                                                                                                                                          │
+│  A comunidade de investimentos reagiu em uníssono. Analistas de grandes bancos reiteraram suas classificações de "compra" e muitos elevaram seus         │
+│  preços-alvo, citando a clareza recém-adquirida. A relação Preço/Lucro (P/L) da empresa, atualmente em **27.77**, reflete a disposição dos investidores  │
+│  em pagar um prêmio pela dominância de mercado e pelo potencial de crescimento futuro, um prêmio que agora parece mais justificado.                      │
+│                                                                                                                                                          │
+│  Em suma, a Alphabet não apenas venceu uma batalha legal; ela ganhou a liberdade para lutar a guerra tecnológica que definirá a próxima década. O        │
+│  alívio em Mountain View é palpável, mas a calmaria é apenas o prelúdio para a intensificação da competição mais importante de sua história.             │
+│                                                                                                                                                          │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+
+--- RESULTADO FINAL DA KEY ---
+### **Alívio em Mountain View: Vitória Judicial Impulsiona Alphabet e Reacende Foco na Batalha da IA**
+
+**Decisão em caso antitruste preserva ecossistema da empresa e acordo bilionário com a Apple, removendo uma densa nuvem de incerteza e levando investidores a reavaliarem o gigante da tecnologia, cujas ações atingiram novas máximas históricas.**
+
+**Por Jornalista Financeiro Experiente**
+
+Uma onda de alívio e otimismo varreu Wall Street, impulsionando as ações da Alphabet Inc. (GOOG) para territórios inexplorados. A causa da euforia foi a decisão favorável em um dos casos antitruste mais observados da década, movido pelo Departamento de Justiça dos EUA. Por meses, uma ameaça existencial pairou sobre a holding do Google: a possibilidade de uma reestruturação forçada que poderia desmembrar seu poderoso ecossistema. Com a decisão judicial afastando os cenários mais drásticos, o mercado não apenas respirou aliviado, mas reavaliou o valor de um gigante agora livre para focar em seu próximo grande desafio: a supremacia na era da Inteligência Artificial.
+
+A reação foi imediata e retumbante. As ações da companhia, negociadas a **$260.51**, dispararam, refletindo a confiança renovada dos investidores. Esse movimento adicionou bilhões ao valor de mercado da empresa, consolidando sua posição como um dos titãs globais com uma capitalização de mercado que agora ultrapassa os **$3.15 trilhões**.
+
+#### **O Fim de uma Ameaça Existencial**
+
+No cerne da questão estava o pedido do Departamento de Justiça para que a Alphabet fosse forçada a vender ativos cruciais, como seu navegador Chrome. Tal medida teria abalado fundamentalmente a sinergia que sustenta o domínio da empresa. O modelo de negócios da Alphabet, uma multinacional com sede em Mountain View, Califórnia, depende da integração perfeita entre seus segmentos: Google Services (Busca, Android, Chrome, YouTube) e Google Cloud. O Chrome não é apenas um navegador; é o principal canal de distribuição para o motor de busca do Google, que, por sua vez, alimenta a multibilionária máquina de publicidade da empresa.
+
+A decisão de um juiz federal de rejeitar essa medida foi, nas palavras de muitos analistas, o "melhor cenário possível". Ao permitir que a Alphabet mantenha sua estrutura intacta, a justiça validou, por ora, a coesão de seu ecossistema. A empresa, como descreve a mídia especializada, "se esquivou de uma bala", evitando uma perturbação massiva em suas operações e estratégia de longo prazo.
+
+#### **A Joia da Coroa Está Segura: O Acordo com a Apple**
+
+Igualmente crucial foi a preservação do acordo multibilionário que a Alphabet mantém com a Apple. Este pacto garante que o Google Search seja o mecanismo de busca padrão no navegador Safari, utilizado em milhões de iPhones, iPads e Macs em todo o mundo. A perda deste contrato não seria apenas um golpe financeiro direto, mas abriria uma porta estratégica para concorrentes como o Bing, da Microsoft.
+
+Ao manter o acordo, a Alphabet solidifica uma de suas mais vitais fontes de tráfego e receita, garantindo que seu motor de busca permaneça como o ponto de partida para a grande maioria dos usuários no ecossistema de maior valor do mundo.
+
+#### **Com o Passado Resolvido, o Futuro é a IA**
+
+Com a remoção do que Wall Street chamava de "overhang" regulatório — um fator de incerteza que deprimia o potencial das ações —, a narrativa sobre a Alphabet muda de tom. A questão não é mais sobre defesa legal, mas sobre inovação e ataque comercial. O foco se volta inteiramente para a corrida da Inteligência Artificial.
+
+A ameaça representada pela parceria Microsoft/OpenAI e a ascensão da busca generativa através de ferramentas como o ChatGPT é real e iminente. Essas tecnologias prometem transformar a maneira como os usuários encontram informações, desafiando o modelo clássico de links azuis que fez do Google um verbo.
+
+Agora, com seu negócio principal seguro e sua estrutura coesa, a Alphabet está em uma posição privilegiada para integrar de forma mais agressiva suas próprias tecnologias de IA, como o poderoso modelo Gemini, em todo o seu portfólio de produtos. A batalha pelo futuro da busca e da interação digital está oficialmente em primeiro plano, e a Alphabet entra nela sem as amarras da incerteza jurídica.
+
+A comunidade de investimentos reagiu em uníssono. Analistas de grandes bancos reiteraram suas classificações de "compra" e muitos elevaram seus preços-alvo, citando a clareza recém-adquirida. A relação Preço/Lucro (P/L) da empresa, atualmente em **27.77**, reflete a disposição dos investidores em pagar um prêmio pela dominância de mercado e pelo potencial de crescimento futuro, um prêmio que agora parece mais justificado.
+
+Em suma, a Alphabet não apenas venceu uma batalha legal; ela ganhou a liberdade para lutar a guerra tecnológica que definirá a próxima década. O alívio em Mountain View é palpável, mas a calmaria é apenas o prelúdio para a intensificação da competição mais importante de sua história.
+
+--- TESTE DE KICKOFF BEM SUCEDIDO ---
+.
+
+=============================== warnings summary ===============================
+tests/test_crew_run.py::test_financial_crew_execution
+tests/test_crew_run.py::test_financial_crew_execution
+tests/test_crew_run.py::test_financial_crew_execution
+  /home/luiseduardo/ai-agents/analyzer_agents/.venv/lib/python3.10/site-packages/pydantic/main.py:464: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected 9 fields but got 5: Expected `Message` - serialized value may not be as expected [field_name='message', input_value=Message(content='\nThough...er_specific_fields=None), input_type=Message])
+    PydanticSerializationUnexpectedValue(Expected `StreamingChoices` - serialized value may not be as expected [field_name='choices', input_value=Choices(finish_reason='st...r_specific_fields=None)), input_type=Choices])
+    return self.__pydantic_serializer__.to_python(
+
+tests/test_crew_run.py::test_financial_crew_execution
+tests/test_crew_run.py::test_financial_crew_execution
+  /home/luiseduardo/ai-agents/analyzer_agents/.venv/lib/python3.10/site-packages/pydantic/main.py:464: UserWarning: Pydantic serializer warnings:
+    PydanticSerializationUnexpectedValue(Expected 9 fields but got 5: Expected `Message` - serialized value may not be as expected [field_name='message', input_value=Message(content='Thought:...er_specific_fields=None), input_type=Message])
+    PydanticSerializationUnexpectedValue(Expected `StreamingChoices` - serialized value may not be as expected [field_name='choices', input_value=Choices(finish_reason='st...r_specific_fields=None)), input_type=Choices])
+    return self.__pydantic_serializer__.to_python(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=================== 1 passed, 5 warnings in 86.10s (0:01:26) ===================
