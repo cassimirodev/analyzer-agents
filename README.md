@@ -9,7 +9,7 @@ Uma crew de agentes IA que coletam e analisam dados financeiros de forma autôno
 Primeiro, clone o repositório para a sua máquina local:
 
 ```bash
-git clone <URL_DO_SEU_REPOSITORIO>
+git clone git@github.com:cassimirodev/analyzer-agents.git
 cd analyzer_agents
 ```
 
