@@ -15,17 +15,25 @@ cd analyzer_agents
 
 ### 2. Configurar o Ambiente Virtual
 
+Com `python`:
+```bash
+python -m venv .venv
+```
+
+Com `uv`:
+```bash
+uv venv
+```
+Após a criação, ative o ambiente:
 
 ```bash
-# Criar o ambiente virtual
-python -m venv .venv
-
 # Ativar o ambiente (Linux/macOS)
 source .venv/bin/activate
 
 # Ativar o ambiente (Windows)
 .venv\Scripts\activate
 ```
+
 
 ### 3. Instalar as Dependências
 
@@ -62,13 +70,45 @@ GEMINI_API_KEY="SUA_CHAVE_API_GEMINI"
 SERPER_API_KEY="SUA_CHAVE_API_SERPER"
 ```
 
-Caso não queria utilizar o gemini, você pode mudar o provider [aqui](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project).
+Caso não queria utilizar o gemini, você pode mudar o provider [aqui](https://docs.crewai.com/en/concepts/llms).
 
 
 ## Rodando os Testes
 
-Como o projeto ainda não está finalizado, utilize os testes automatizados para testar o código:
+O Código possui testes automatizados para verificar o funcionamento do código, rode com: 
 
 ```bash
 pytest
 ```
+
+## Rodando a API
+
+O projeto inclui uma API FastAPI para interagir com os agentes.
+
+### 1. Iniciar o Servidor
+
+
+Para rodar a API em modo de desenvolvimento, execute o seguinte comando na raiz do projeto:
+
+```bash
+fastapi dev src/analyzer_agents/api/main.py
+```
+
+
+### 2. Usando os Endpoints
+
+A API fornece a documentação interativa do Swagger UI em `localhost/docs`.
+
+Para enviar um tópico para análise, você pode usar o endpoint `/analyze` com uma requisição POST.
+
+Exemplo com Postman:
+
+```bash
+POST http://localhost:8000/analyze
+
+{
+  "topic": "NVIDIA"
+}
+```
+
+O resultado da análise da crew será retornado na resposta.
