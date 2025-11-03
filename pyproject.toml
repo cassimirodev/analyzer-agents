@@ -8,6 +8,7 @@ dependencies = [
     "crewai[tools]>=0.203.1,<1.0.0",
     "pytest>=8.4.2",
     "yfinance>=0.2.66",
+    "fastapi[standard]>=0.120.4"
 ]
 
 [project.scripts]
